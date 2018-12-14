@@ -1,4 +1,4 @@
-import { Captcha } from '../src/captcha';
+import { Captcha } from './node_modules/@haikel/min-captcha';
 
 window.onload = () => {
 
