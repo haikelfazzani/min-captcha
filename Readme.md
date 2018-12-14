@@ -1,6 +1,6 @@
 <h2>Simple Capctha</h2>
 <a href="#"><img src="https://img.shields.io/badge/build-succes-brightgreen.svg"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-1.0.3-blue.svg"></a>
+<a href="#"><img src="https://img.shields.io/badge/version-1.0.4-blue.svg"></a>
 
 <pre><code>npm i @haikel/min-captcha</code></pre>
 
@@ -24,10 +24,10 @@ let myCanvasElement = setupCanvas():
 
 // last : now you can append the myCanvasElement to any element in the dom
 let myDiv = document.getElementById("my-div");
+myDiv.appendChild(myCanvasElement);
 </code></pre>
 
-<pre><code>
-Captcha class methods :
+<pre><code>Captcha class methods are :
 
 getRndString(options = {nbChar, myStr}) : return a random string (Note : options object is optional)
 setupCanvas(options = {randString, sizeAndFont, x, y}) : return a canvas element (Note : options object is optional)

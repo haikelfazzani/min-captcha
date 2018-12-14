@@ -1,6 +1,6 @@
 {
   "name": "@haikel/min-captcha",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simple captcha to generate a random string into canvas element",
   "main": "./dist/captcha.js",
   "scripts": {
