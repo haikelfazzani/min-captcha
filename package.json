@@ -1,7 +1,7 @@
 {
-  "name": "simple-captcha-api",
-  "version": "1.0.0",
-  "description": "simple captcha to generate a random string and to put it into canvas",
+  "name": "@haikel/min-captcha",
+  "version": "1.0.2",
+  "description": "simple captcha to generate a random string into canvas element",
   "main": "./dist/captcha.js",
   "scripts": {
     "dev": "parcel examples/index.html",
