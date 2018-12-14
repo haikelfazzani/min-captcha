@@ -1,6 +1,6 @@
 <h2>Simple Capctha</h2>
 <a href="#"><img src="https://img.shields.io/badge/build-succes-brightgreen.svg"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-1.0.5-blue.svg"></a>
+<a href="#"><img src="https://img.shields.io/badge/version-1.0.6-blue.svg"></a>
 
 <pre><code>npm i @haikel/min-captcha</code></pre>
 
@@ -13,6 +13,7 @@ let captcha = require('./node_modules/@haikel/min-captcha');
 </code></pre>
 
 <pre><code>
+<b>Example</b>
 // First : get instance from Captcha class
 let captcha = new Captcha();
 
@@ -27,7 +28,7 @@ let myDiv = document.getElementById("my-div");
 myDiv.appendChild(myCanvasElement);
 </code></pre>
 
-<pre><code>Captcha class methods are :
+<pre><code><b>Captcha class methods are :</b>
 
 getRndString(options = {nbChar, myStr}) : return a random string (Note : options object is optional)
 setupCanvas(options = {randString, sizeAndFont, x, y}) : return a canvas element (Note : options object is optional)
@@ -65,7 +66,7 @@ options = {
 
 <pre><code>
 <b>Note :</b> if you change the number of characters (nbChar) 
-then the randString property is required
+then the "randString" property is required
 because it will use getRndString({nbChar : 5}) by default.
 
 <b>example : </b>
@@ -74,12 +75,15 @@ let captcha = new Captcha();
 let myRandomString = captcha.getRndString({nbChar : 8});
 let myCanvasElement = captcha.setupCanvas({randString :myRandomString}):
 
-
-now you can append the myCanvasElement to any element in the dom
+// now you can append the myCanvasElement to any element in the dom
 let myDiv    = document.getElementById("my-div");
 
 myDiv.appendChild(myCanvasElement);    
 </code></pre>
+
+
+<h3>Test example : <a href="https://min-captcha.netlify.com" target="_blank">Link</a></h3>
+
 
 <h2>License</h2>
 MIT
