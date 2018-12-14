@@ -1,0 +1,9 @@
+.container {
+    display: flex;    
+}
+
+#my-canvas {
+    width: 130px;
+    height: 30px;
+    border: 1px solid;
+}

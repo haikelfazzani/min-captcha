@@ -1,0 +1,14 @@
+{
+  "name": "simple-captcha-api",
+  "version": "1.0.0",
+  "description": "simple captcha to generate a random string and to put it into canvas",
+  "main": "index.html",
+  "scripts": {
+    "dev": "parcel examples/index.html",
+    "build": "parcel build src/api.js"
+  },
+  "keywords": ["simple" , "captcha" , "canvas" , "random string"],
+  "author": "Haikel Fazzani",
+  "license": "MIT",
+  "dependencies": {    }
+}
