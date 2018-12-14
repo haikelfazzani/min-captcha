@@ -1,6 +1,6 @@
 <h2>Simple Capctha</h2>
 <a href="#"><img src="https://img.shields.io/badge/build-succes-brightgreen.svg"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-1.0.2-blue.svg"></a>
+<a href="#"><img src="https://img.shields.io/badge/version-1.0.3-blue.svg"></a>
 
 <pre><code>npm i @haikel/min-captcha</code></pre>
 
@@ -9,12 +9,14 @@
 <pre><code>
 import { Captcha } from 'captcha';
 or
-let captcha = require('captcha');
+let captcha = require('captcha');    
+</code></pre>
 
-// First get instance from Captcha class
+<pre><code>
+// First : get instance from Captcha class
 let captcha = new Captcha();
 
-// second generate a random string by default length is 5
+// second : generate a random string by default length is 5
 let myRandomString = getRndString();
 
 // third : create a canvas element
@@ -27,14 +29,14 @@ let myDiv = document.getElementById("my-div");
 <pre><code>
 Captcha class methods :
 
-getRndString(options = {nbChar, myStr} : is optionnal) : return a random string
-setupCanvas(options = {randString, sizeAndFont, x, y} : is optionnal) : return a canvas element
+getRndString(options = {nbChar, myStr}) : return a random string (Note : options object is optional)
+setupCanvas(options = {randString, sizeAndFont, x, y}) : return a canvas element (Note : options object is optional)
 </code></pre>
 
 <h2>Methods in details</h2>
 
 <pre><code>
-getRndString(options : is optionnal) : return a random string
+getRndString(options) : return a random string (Note : options object is optional)
 or
 getRndString() : return a random string
             
@@ -47,7 +49,7 @@ options = {
 </code></pre>
 
 <pre><code>
-setupCanvas(options : is optionnal) : return a canvas element
+setupCanvas(options) : return a canvas element (Note : options object is optional)
 or
 setupCanvas() : return a canvas element
 

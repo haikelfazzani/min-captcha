@@ -1,6 +1,6 @@
 {
   "name": "@haikel/min-captcha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple captcha to generate a random string into canvas element",
   "main": "./dist/captcha.js",
   "scripts": {
@@ -11,12 +11,12 @@
   "author": "Haikel Fazzani",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haikelfazzani/simple-captcha.git"
+    "url": "git+https://github.com/haikelfazzani/min-captcha.git.git"
   },
   "bugs": {
-    "url": "https://github.com/haikelfazzani/simple-captcha/issues"
+    "url": "https://github.com/haikelfazzani/min-captcha.git/issues"
   },
-  "homepage": "https://github.com/haikelfazzani/simple-captcha#readme",
+  "homepage": "https://github.com/haikelfazzani/min-captcha.git#readme",
   "license": "MIT",
   "devDependencies": {
     "jest": "^23.6.0",
