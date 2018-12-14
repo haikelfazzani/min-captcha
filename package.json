@@ -2,13 +2,24 @@
   "name": "simple-captcha-api",
   "version": "1.0.0",
   "description": "simple captcha to generate a random string and to put it into canvas",
-  "main": "index.html",
+  "main": "./dist/captcha.js",
   "scripts": {
     "dev": "parcel examples/index.html",
-    "build": "parcel build src/api.js"
+    "build": "parcel build src/captcha.js"
   },
   "keywords": ["simple" , "captcha" , "canvas" , "random string"],
   "author": "Haikel Fazzani",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haikelfazzani/simple-captcha.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haikelfazzani/simple-captcha/issues"
+  },
+  "homepage": "https://github.com/haikelfazzani/simple-captcha#readme",
   "license": "MIT",
-  "dependencies": {    }
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.10.3"
+  }
 }
