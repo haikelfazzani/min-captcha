@@ -199,6 +199,7 @@ var _api = require("../src/api");
 window.onload = function () {
   var input = document.getElementById("input"),
       btn = document.getElementById("btn"),
+      result = document.getElementById("result"),
       myCanvas = document.getElementById("my-canvas");
   var captcha = new _api.Captcha();
   var randString = captcha.getRndString({
@@ -209,12 +210,15 @@ window.onload = function () {
     randString: randString
   });
   myCanvas.appendChild(canvas);
+  result.style.display = "none";
 
   btn.onclick = function () {
     if (input.value === randString) {
-      console.log("goood!!");
+      result.style.display = "block";
+      result.textContent = "Good!";
     } else {
-      console.log("bad!!");
+      result.textContent = "Bad!";
+      result.style.display = "block";
     }
   };
 };
@@ -245,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51920" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59313" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

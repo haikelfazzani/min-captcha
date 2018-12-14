@@ -4,6 +4,7 @@ window.onload = () => {
 
     let input = document.getElementById("input") ,
         btn = document.getElementById("btn") ,
+        result = document.getElementById("result") ,
         myCanvas = document.getElementById("my-canvas");
 
     let captcha = new Captcha();        
@@ -14,12 +15,14 @@ window.onload = () => {
     let canvas = captcha.setupCanvas({randString});
     myCanvas.appendChild(canvas);
 
-
+    result.style.display = "none";
     btn.onclick = () => {
         if(input.value === randString) {
-            console.log("goood!!")
+            result.style.display = "block";
+            result.textContent = "Good!";
         }else {
-            console.log("bad!!")
+            result.textContent = "Bad!"
+            result.style.display = "block";
         }
     }
 }
