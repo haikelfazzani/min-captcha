@@ -1,6 +1,6 @@
 <h2>Simple Capctha</h2>
 <a href="#"><img src="https://img.shields.io/badge/build-succes-brightgreen.svg"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-1.0.8-blue.svg"></a>
+<a href="#"><img src="https://img.shields.io/badge/version-1.0.9-blue.svg"></a>
 
 <pre><code>npm i @haikel/min-captcha</code></pre>
 
@@ -16,6 +16,9 @@ let captcha = require('./node_modules/@haikel/min-captcha');
 <b>Example</b>
 // First : get instance from Captcha class
 let captcha = new Captcha();
+
+// Second : create a canvas element with random string 
+let myCanvasElement = captcha.setupCanvas();
 
 // last : now you can append the myCanvasElement to any element in the dom
 let myDiv = document.getElementById("my-div");
@@ -40,7 +43,7 @@ getRndString() : return a random string
             
 options = {
     nbChar ,	// nbChar : the length of the random string
-    myStr      	// myStr : specify your own string
+    myStr      	// myStr : you can specify your own string
 };             
 
 // by default : options = {nbChar : 5, myStr : "ABCDEFGHIKLMNOPQRSTVXYZ123456789"};
