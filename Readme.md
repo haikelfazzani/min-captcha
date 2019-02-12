@@ -1,6 +1,7 @@
 <h2>Simple Capctha</h2>
 <a href="#"><img src="https://img.shields.io/badge/build-succes-brightgreen.svg"></a>
 <a href="#"><img src="https://img.shields.io/badge/version-1.0.9-blue.svg"></a>
+<a href="https://snyk.io/test/github/haikelfazzani/min-captcha"><img src="https://snyk.io/test/github/haikelfazzani/min-captcha/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/haikelfazzani/min-captcha" style="max-width:100%;"></a>
 
 <pre><code>npm i @haikel/min-captcha</code></pre>
 
