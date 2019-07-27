@@ -1,7 +1,7 @@
 export default class Captcha {
 
     // nbChars : number of characters to be generated
-    // myStr : specify your own string
+    // myStr : you can specify your own string
     getRndString({ nbChars = 5, myStr = "ABCDEFGHIKLMNOPQRSTVXYZ123456789" } = {}) {
         let text = "";
         for (let i = 0; i < nbChars; i++) {

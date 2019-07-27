@@ -14,10 +14,17 @@ body { background-color: #fbfbfb; }
 }
 
 pre {
-    background-color: #1a1a1a;
-    color: #fff;
-    font-size: 16px;
-    padding: 20px;
+    margin: 20px; 
+    padding: 20px; 
+    color: #aaa;
+    background-color: #222 !important;
+    white-space: pre; 
+    text-shadow: 0 1px 0 #000;
+    border-radius: 5px; 
+    border-bottom: 1px solid #555;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
+    font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;	
+    overflow: auto;
 }
 
 label { margin-top: 10px; font-size: 18px; width: 100%; }

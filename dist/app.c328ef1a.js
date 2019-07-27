@@ -128,7 +128,7 @@ function () {
   _createClass(Captcha, [{
     key: "getRndString",
     // nbChars : number of characters to be generated
-    // myStr : specify your own string
+    // myStr : you can specify your own string
     value: function getRndString() {
       var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref$nbChars = _ref.nbChars,
@@ -271,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52533" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54179" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
