@@ -1,4 +1,4 @@
-import { Captcha } from './node_modules/@haikel/min-captcha';
+import Captcha from '../src/captcha';
 
 window.onload = () => {
 
@@ -15,13 +15,14 @@ window.onload = () => {
         you can specify how many character (nbChar : optionnal) it will be displayed into the canvas element
         by default : nbChar = 5
     */
-    let randString = captcha.getRndString({nbChar:3});
+    let randString = captcha.getRndString(3);
 
     /* 
         third : setup canvas using the setupCanvas method and add the random string generated as parameter
         randString : optionnal
     */
     let canvas = captcha.setupCanvas({randString});
+
     // last : append canvas to any element you want
     myCanvas.appendChild(canvas);
 
