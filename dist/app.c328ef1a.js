@@ -206,7 +206,7 @@ window.onload = function () {
   var input = document.getElementById("input"),
       btn = document.getElementById("btn"),
       result = document.getElementById("result"),
-      myCanvas = document.getElementById("my-canvas"); // first : get instance from Captcha class
+      divElement = document.getElementById("my-div"); // first : get instance from Captcha class
 
   var captcha = new _captcha.default();
   /* 
@@ -224,10 +224,14 @@ window.onload = function () {
   */
 
   var canvas = captcha.setupCanvas({
-    randString: randString
+    randString: randString,
+    canvasWidth: divElement.offsetWidth,
+    sizeAndFont: "28px Arial",
+    x: 40,
+    y: 25
   }); // last : append canvas to any element you want
 
-  myCanvas.appendChild(canvas);
+  divElement.appendChild(canvas);
   result.style.display = "none";
 
   btn.onclick = function () {
@@ -267,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52533" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -5,7 +5,7 @@ window.onload = () => {
     let input = document.getElementById("input"),
         btn = document.getElementById("btn"),
         result = document.getElementById("result"),
-        myCanvas = document.getElementById("my-canvas");
+        divElement = document.getElementById("my-div");
 
     // first : get instance from Captcha class
     let captcha = new Captcha();
@@ -21,10 +21,17 @@ window.onload = () => {
         third : setup canvas using the setupCanvas method and add the random string generated as parameter
         randString : optionnal
     */
-    let canvas = captcha.setupCanvas({ randString });
+    let canvas = captcha.setupCanvas(
+        {
+            randString,
+            canvasWidth: divElement.offsetWidth ,
+            sizeAndFont: "28px Arial",
+            x: 40,
+            y: 25
+        });
 
     // last : append canvas to any element you want
-    myCanvas.appendChild(canvas);
+    divElement.appendChild(canvas);
 
 
     result.style.display = "none";
