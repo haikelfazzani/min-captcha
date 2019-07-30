@@ -1,22 +1,48 @@
-body { background-color: #fbfbfb; }
+* {
+    box-sizing: border-box;
+  }
 
-.container {
-    margin-left: 10px;
-    display: flex;    
-    flex-direction: column;
+body { 
+    margin: 0;
+    background-color: #4e4e4e; 
 }
 
+.container {
+    width: 1140px;
+    margin: auto;
+    margin-bottom: 20px ;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+     
+}
+
+.col-4 , .col-8 { padding: 20px; }
+
+.col-4 {    
+    width: 33.33%;
+    flex:1 1 33.33%;    
+}
+
+.col-8 {    
+    width: 66.66%;
+    flex:1 1 66.66%;    
+}
+
+.mt-20 { margin-top: 20px; }
+
 #my-div {
-    margin-top: 20px;
+    padding: 10px;
     width: 100%;
-    max-width: 200px;
-    background-color: #485763;
+    background-color: #e7e7e7;
+    border-radius: 5px;
 }
 
 pre {
-    margin: 20px; 
+    margin: 0;
     padding: 20px; 
-    color: #aaa;
+    color: rgb(189, 189, 189);
     background-color: #222 !important;
     white-space: pre; 
     text-shadow: 0 1px 0 #000;
@@ -25,18 +51,16 @@ pre {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
     font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;	
     overflow: auto;
+    width: 100%;
 }
 
-label { margin-top: 10px; font-size: 18px; width: 100%; }
 
-input[type="text"] {
-    background-color: #4e4e4e;
-    color: #fff;    
+input[type="text"] { 
     border: 2px solid #FFC107;
-    margin-top: 10px;
-    padding: 5px 15px;
+    border-radius: 5px;
+    padding: 10px;
     font-size: 18px;
-    max-width: 200px;
+    width: 100% !important;
 }
 
 #btn , #result { 
@@ -45,18 +69,30 @@ input[type="text"] {
     text-transform: uppercase;
     margin-top: 20px;
     padding: 10px 30px;
-    max-width: 200px;    
+    width: 100%; 
 }
 
 #btn {
+    width:100%;
+    padding: 10px;
     background-color: #F44336;    
     border: 1px solid;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #result {
-    background-color: #607D8B;
-    max-width: 51px;
+    width:100%;
+    background-color: #607D8B;    
     font-size: 16px;
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;    
+    }
+    
+  }

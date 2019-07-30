@@ -2,29 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 
-    <link rel="stylesheet" href="/style.e308ff8e.css">
+  <link rel="stylesheet" href="/style.e308ff8e.css">
 <script src="/style.e308ff8e.js"></script></head>
 
 <body>
 
-    <div class="container">
-        <div id="my-div"></div>
-        <label>Enter captcha text : </label>
-        <input type="text" name="input" id="input">        
+
+
+  <div class="container">
+
+    <div class="col-4">
+      <pre><code>npm i @haikel/min-captcha</code></pre>
+
+      <div id="my-div" class="mt-20"></div>
+      <input type="text" name="input" id="input" class="mt-20" placeholder="Enter captcha text..">
+
+      <button id="btn">Verify</button>
+      <div id="result"></div>
     </div>
 
-    <div class="container">
-        <button id="btn">Verify</button>
-        <div id="result"></div>
-    </div>
+    <div class="col-8">
 
-
-    <pre><code>import Captcha from '../src/captcha';
+      <pre><code>import Captcha from './node_modules/@haikel/min-captcha';
 
 window.onload = () => {
 
@@ -59,8 +63,10 @@ window.onload = () => {
     }
 }
     </code></pre>
+    </div>
+  </div>
 
-    <script src="/app.c328ef1a.js"></script>
+  <script src="/app.c328ef1a.js"></script>
 </body>
 
 </html>
