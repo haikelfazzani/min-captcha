@@ -4,33 +4,8 @@
 
 body { 
     margin: 0;
-    background-color: #4e4e4e; 
+    background-color: #4e4e4e !important; 
 }
-
-.container {
-    width: 1140px;
-    margin: auto;
-    margin-bottom: 20px ;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-     
-}
-
-.col-4 , .col-8 { padding: 20px; }
-
-.col-4 {    
-    width: 33.33%;
-    flex:1 1 33.33%;    
-}
-
-.col-8 {    
-    width: 66.66%;
-    flex:1 1 66.66%;    
-}
-
-.mt-20 { margin-top: 20px; }
 
 #my-div {
     padding: 10px;
@@ -39,10 +14,10 @@ body {
     border-radius: 5px;
 }
 
-pre {
-    margin: 0;
-    padding: 20px; 
-    color: rgb(189, 189, 189);
+pre {    
+    font-size: 18px !important;    
+    padding: 20px;
+    color: rgb(189, 189, 189) !important;
     background-color: #222 !important;
     white-space: pre; 
     text-shadow: 0 1px 0 #000;
@@ -54,45 +29,8 @@ pre {
     width: 100%;
 }
 
-
-input[type="text"] { 
-    border: 2px solid #FFC107;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    width: 100% !important;
-}
-
-#btn , #result { 
-    color: #fff;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-top: 20px;
-    padding: 10px 30px;
-    width: 100%; 
-}
-
-#btn {
-    width:100%;
-    padding: 10px;
-    background-color: #F44336;    
-    border: 1px solid;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#result {
-    width:100%;
-    background-color: #607D8B;    
-    font-size: 16px;
-    text-align: center;
-}
+.methods { color: #ffffff !important; }
 
 @media screen and (max-width: 600px) {
-    .container {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;    
-    }
-    
+
   }

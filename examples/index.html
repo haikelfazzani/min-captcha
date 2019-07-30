@@ -3,33 +3,43 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="simple and easy js captcha">
+  <meta name="keywords" content="JavaScript, captcha, js, auto, text, generator">
+  <meta name="author" content="Haikel Fazzani">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>MinCaptcha - Simple and easy js captcha</title>
 
   <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
 
+  <div class="container py-5">
 
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <pre><code>npm i @haikel/min-captcha</code></pre>
 
-  <div class="container">
+        <div id="my-div" class="mt-20"></div>
 
-    <div class="col-4">
-      <pre><code>npm i @haikel/min-captcha</code></pre>
+        <div class="form-group input-group-lg mt-3">
+          <input type="text" name="input" id="input" class="form-control" placeholder="Enter captcha text..">
+        </div>
 
-      <div id="my-div" class="mt-20"></div>
-      <input type="text" name="input" id="input" class="mt-20" placeholder="Enter captcha text..">
+        <button id="btn" class="btn btn-success btn-block btn-lg">Verify</button>
+        <div class="alert alert-primary mt-3" role="alert" id="result"></div>
+      </div>
 
-      <button id="btn">Verify</button>
-      <div id="result"></div>
-    </div>
+      <div class="col-md-8">
 
-    <div class="col-8">
-
-      <pre><code>import Captcha from './node_modules/@haikel/min-captcha';
-
+        <pre><code>import Captcha from './node_modules/@haikel/min-captcha';
+      
 window.onload = () => {
 
     let input = document.getElementById("input"),
@@ -38,16 +48,16 @@ window.onload = () => {
         divElement = document.getElementById("my-div");
 
 
-    let randString = captcha.getRndString({ nbChars: 3 });
-
-    let canvas = captcha.setupCanvas({
+    let randString = <span class="methods">captcha.getRndString({ nbChars: 3 })</span>;
+    
+    let canvas = <span class="methods">captcha.setupCanvas({
             randString,
             canvasWidth: divElement.offsetWidth ,
             sizeAndFont: "28px Arial",
             x: 40,
             y: 25
         });
-
+    </span> 
     divElement.appendChild(canvas);
 
 
@@ -62,8 +72,11 @@ window.onload = () => {
         }
     }
 }
-    </code></pre>
+          </code></pre>
+      </div>
     </div>
+
+
   </div>
 
   <script src="./app.js"></script>
