@@ -33,7 +33,7 @@ myDiv.appendChild(canvas);
 
 ## setupCanvas in details
 ```js
-> setupCanvas(config) return object
+> setupCanvas(config) :return object
 // { canvas, rndStr }     
 
 // by default : 
