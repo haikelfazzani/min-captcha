@@ -1,4 +1,4 @@
-import Captcha from '../src/captcha';
+var setupCanvas = require('../src/captcha');
 
 window.onload = () => {
 
@@ -7,41 +7,18 @@ window.onload = () => {
         result = document.getElementById("result"),
         divElement = document.getElementById("my-div");
 
-    // first : get instance from Captcha class
-    let captcha = new Captcha();
+    const config = {
+        nbChars: 3,
+        charsColor:"#000",
+        charPool: "abcdef123456",
+        textFont: "25px Arial"
+    };
 
-    /* 
-        Second : get a random string using getRndString method , 
-        you can specify how many character (nbChar : optionnal) it will be displayed into the canvas element
-        by default : nbChars = 5
-    */
-    let randString = captcha.getRndString({ nbChars: 3 });
+    let { canvas, rndStr } = setupCanvas(config);
 
-    /* 
-        third : setup canvas using the setupCanvas method and add the random string generated as parameter
-        randString : optionnal
-    */
-    let canvas = captcha.setupCanvas(
-        {
-            randString,
-            canvasWidth: divElement.offsetWidth ,
-            sizeAndFont: "28px Arial",
-            x: 40,
-            y: 25
-        });
-
-    // last : append canvas to any element you want
     divElement.appendChild(canvas);
 
-
-    result.style.display = "none";
     btn.onclick = () => {
-        if (input.value === randString) {
-            result.style.display = "block";
-            result.textContent = "Good!";
-        } else {
-            result.textContent = "Bad!"
-            result.style.display = "block";
-        }
+        result.textContent = input.value === rndStr ? "good" : "bad";        
     }
 }

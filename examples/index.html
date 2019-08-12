@@ -38,41 +38,33 @@
 
       <div class="col-md-8">
 
-        <pre><code>import Captcha from './node_modules/@haikel/min-captcha';
-      
+        <pre><code>
+var setupCanvas = require('@haikel/min-captcha');
+
 window.onload = () => {
 
-    let input = document.getElementById("input"),
-        btn = document.getElementById("btn"),
-        result = document.getElementById("result"),
-        divElement = document.getElementById("my-div");
+  let input = document.getElementById("input"),
+      btn = document.getElementById("btn"),
+      result = document.getElementById("result"),
+      divElement = document.getElementById("my-div");
 
+  const config = {
+      nbChars: 3,
+      charsColor:"#000",
+      charPool: "abcdef123456",
+      textFont: "25px Arial"
+  };
 
-    let randString = <span class="methods">captcha.getRndString({ nbChars: 3 })</span>;
-    
-    let canvas = <span class="methods">captcha.setupCanvas({
-            randString,
-            canvasWidth: divElement.offsetWidth ,
-            sizeAndFont: "28px Arial",
-            x: 40,
-            y: 25
-        });
-    </span> 
-    divElement.appendChild(canvas);
+  let { canvas, rndStr } = setupCanvas(config);
 
+  divElement.appendChild(canvas);
 
-    result.style.display = "none";
-    btn.onclick = () => {
-        if (input.value === randString) {
-            result.style.display = "block";
-            result.textContent = "Good!";
-        } else {
-            result.textContent = "Bad!"
-            result.style.display = "block";
-        }
-    }
+  btn.onclick = () => {
+      result.textContent = input.value === rndStr ? "good" : "bad";        
+  }
 }
           </code></pre>
+
       </div>
     </div>
 
