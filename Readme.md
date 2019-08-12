@@ -12,9 +12,9 @@ npm i @haikel/min-captcha
 ## Usage
 
 ```js
-import { setupCanvas } from '@haikel/min-captcha';
+import setupCanvas from '@haikel/min-captcha';
 or
-const { setupCanvas } = require('@haikel/min-captcha');  
+const setupCanvas = require('@haikel/min-captcha');  
 ```
 
 ## Examples
