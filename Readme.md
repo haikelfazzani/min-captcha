@@ -31,7 +31,7 @@ let myDiv = document.getElementById("my-div");
 myDiv.appendChild(canvas);
 ```
 
-## setupCanvas in details
+## setupCanvas method in details
 ```js
 > setupCanvas(config) :return object
 // { canvas, rndStr }     

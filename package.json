@@ -12,8 +12,7 @@
     "js",
     "captcha",
     "canvas",
-    "image",
-    "random string"
+    "image"
   ],
   "author": "Haikel Fazzani",
   "repository": {
