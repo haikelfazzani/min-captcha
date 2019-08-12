@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+
+body { 
+    margin: 0;
+    background-color: #4e4e4e !important; 
+}
+
+#my-div {
+    padding: 10px;
+    width: 100%;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+}
+
+pre {    
+    font-size: 18px !important;    
+    padding: 20px;
+    color: rgb(189, 189, 189) !important;
+    background-color: #222 !important;
+    white-space: pre; 
+    text-shadow: 0 1px 0 #000;
+    border-radius: 5px; 
+    border-bottom: 1px solid #555;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
+    font: 16px/24px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;	
+    overflow: auto;
+    width: 100%;
+}
+
+.methods { color: #ffffff !important; }
+
+@media screen and (max-width: 600px) {
+
+  }
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
