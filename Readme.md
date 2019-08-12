@@ -4,7 +4,7 @@
 ![version](https://img.shields.io/badge/version-1.2.0-blue.svg)
 ![snyk-badge](https://snyk.io/test/github/haikelfazzani/min-captcha/badge.svg)
 
-
+[Demo](https://min-captcha.netlify.com)
 ```js
 npm i @haikel/min-captcha
 ```
