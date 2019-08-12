@@ -45,7 +45,7 @@ function setupCanvas({
     textFont = "18px Arial", 
     textPosX = 30, 
     textPosY = 30
-}) {
+} = {}) {
 
     let rndStr = getRndStr(nbChars, charPool);
 

@@ -1,7 +1,7 @@
-# Easy & Simple Js Capctha
+# Easy & Simple Js Captcha
 ![captcha img](https://i.ibb.co/q7bwGJq/captc1.png)
 ![build-succes](https://img.shields.io/badge/build-succes-brightgreen.svg)
-![version](https://img.shields.io/badge/version-1.2.0-blue.svg)
+![version](https://img.shields.io/badge/version-1.2.2-blue.svg)
 ![snyk-badge](https://snyk.io/test/github/haikelfazzani/min-captcha/badge.svg)
 
 [Demo](https://min-captcha.netlify.com)
