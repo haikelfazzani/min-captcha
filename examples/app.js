@@ -5,6 +5,7 @@ window.onload = () => {
         result = document.getElementById("result"),
         divElement = document.getElementById("my-div");
 
+        
     const config = {
         nbChars: 3,
         charsColor: "#000",
