@@ -1,21 +1,27 @@
 # Easy & Simple Js Captcha
+[![](https://data.jsdelivr.com/v1/package/npm/@haikel/min-captcha/badge)](https://www.jsdelivr.com/package/npm/@haikel/min-captcha)
 ![captcha img](https://i.ibb.co/q7bwGJq/captc1.png)
 ![build-succes](https://img.shields.io/badge/build-succes-brightgreen.svg)
-![version](https://img.shields.io/badge/version-1.2.2-blue.svg)
 ![snyk-badge](https://snyk.io/test/github/haikelfazzani/min-captcha/badge.svg)
 
-[Demo](https://min-captcha.netlify.com)
+### [Demo](https://min-captcha.netlify.com)
 ```js
-npm i @haikel/min-captcha
+$ npm i @haikel/min-captcha --save
 ```
 
 ## Usage
 
 ```js
-import setupCanvas from '@haikel/min-captcha';
+import captcha from '@haikel/min-captcha';
 or
-const setupCanvas = require('@haikel/min-captcha');  
+const captcha = require('@haikel/min-captcha');  
 ```
+Or include it via jsDelivr CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@haikel/min-captcha@1.3.2/index.min.js"></script>
+```
+
 
 ## Examples
 ```js
@@ -25,16 +31,15 @@ const config = {
     charsColor: "#000" // or rgb(0, 0, 0)
 };
 
-let { canvas } = setupCanvas(config);
+const { canvas, rndStr } = captcha.setup(config);
 
-let myDiv = document.getElementById("my-div");
-myDiv.appendChild(canvas);
+console.log(canvas, rndStr)
+// <canvas width="130" height="30"></canvas> "c22"
 ```
 
-## setupCanvas method in details
+### setup() method in details
 ```js
-> setupCanvas(config) :return object
-// { canvas, rndStr }     
+> setup(config) : object // { canvas, rndStr }     
 
 // by default : 
 config = {

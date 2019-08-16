@@ -1,4 +1,4 @@
-var setupCanvas = require('../src/captcha');
+var captcha = require('../index');
 
 window.onload = () => {
 
@@ -9,16 +9,18 @@ window.onload = () => {
 
     const config = {
         nbChars: 3,
-        charsColor:"#000",
+        charsColor: "#000",
         charPool: "abcdef123456",
         textFont: "25px Arial"
     };
 
-    let { canvas, rndStr } = setupCanvas(config);
+    let { canvas, rndStr } = captcha.setup(config);
+
+    console.log(canvas, rndStr)
 
     divElement.appendChild(canvas);
 
     btn.onclick = () => {
-        result.textContent = input.value === rndStr ? "good" : "bad";        
+        result.textContent = input.value === rndStr ? "good" : "bad";
     }
 }

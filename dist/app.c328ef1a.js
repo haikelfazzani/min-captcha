@@ -117,85 +117,78 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../src/captcha.js":[function(require,module,exports) {
-/**
- * 
- * @param {object} config
- * @returns {string}
- */
-function getRndStr() {
-  var nbChars = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
-  var charPool = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "ABCDEFGHIKLMNOPQRSTVXYZ123456789";
-  var text = "";
+})({"../index.js":[function(require,module,exports) {
+var define;
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-  for (var i = 0; i < nbChars; i++) {
-    text += charPool.charAt(Math.random() * charPool.length | 0);
+(function (name, factory) {
+  if (typeof module != 'undefined') {
+    module.exports = factory();
+  } else if (typeof define == 'function' && _typeof(define.amd) == 'object') {
+    define(factory);
+  } else {
+    this[name] = factory();
   }
-
-  return text;
-}
-/**
- * 
- * @param {string} color
- * @returns {string}
- */
-
-
-function rndColor(color) {
-  var r = Math.floor(Math.random() * 256),
-      g = Math.floor(Math.random() * 256),
-      b = Math.floor(Math.random() * 256);
-  return color || "rgb(".concat(r, ",").concat(g, ",").concat(b, ")");
-}
-
-function charColor(ctx, str, color, x, y) {
-  for (var i = 0; i < str.length; i++) {
-    var ch = str.charAt(i);
-    ctx.fillStyle = rndColor(color);
-    ctx.fillText(ch, x, y);
-    x += ctx.measureText(ch).width;
-  }
-}
-/**
- * 
- * @param {Object} config 
- * @return {Object}
- */
-
-
-function setupCanvas() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      nbChars = _ref.nbChars,
-      charPool = _ref.charPool,
-      _ref$charsColor = _ref.charsColor,
-      charsColor = _ref$charsColor === void 0 ? "" : _ref$charsColor,
-      _ref$cnvsWidth = _ref.cnvsWidth,
-      cnvsWidth = _ref$cnvsWidth === void 0 ? 130 : _ref$cnvsWidth,
-      _ref$cnvsHeight = _ref.cnvsHeight,
-      cnvsHeight = _ref$cnvsHeight === void 0 ? 30 : _ref$cnvsHeight,
-      _ref$textFont = _ref.textFont,
-      textFont = _ref$textFont === void 0 ? "18px Arial" : _ref$textFont,
-      _ref$textPosX = _ref.textPosX,
-      textPosX = _ref$textPosX === void 0 ? 30 : _ref$textPosX,
-      _ref$textPosY = _ref.textPosY,
-      textPosY = _ref$textPosY === void 0 ? 30 : _ref$textPosY;
-
-  var rndStr = getRndStr(nbChars, charPool);
-  var canvas = document.createElement('canvas'),
-      ctx = canvas.getContext('2d');
-  canvas.width = cnvsWidth;
-  canvas.height = cnvsHeight;
-  ctx.font = textFont;
-  charColor(ctx, rndStr, charsColor, textPosX, textPosY);
+})('captcha', function () {
   return {
-    canvas: canvas,
-    rndStr: rndStr
-  };
-}
+    getRndStr: function getRndStr() {
+      var nbChars = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
+      var charPool = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "ABCDEFGHIKLMNOPQRSTVXYZ123456789";
+      var text = "";
 
-module.exports = setupCanvas;
+      for (var i = 0; i < nbChars; i++) {
+        text += charPool.charAt(Math.random() * charPool.length | 0);
+      }
+
+      return text;
+    },
+    rndColor: function rndColor(color) {
+      var r = Math.floor(Math.random() * 256),
+          g = Math.floor(Math.random() * 256),
+          b = Math.floor(Math.random() * 256);
+      return color || "rgb(".concat(r, ",").concat(g, ",").concat(b, ")");
+    },
+    charColor: function charColor(ctx, str, color, x, y) {
+      for (var i = 0; i < str.length; i++) {
+        var ch = str.charAt(i);
+        ctx.fillStyle = this.rndColor(color);
+        ctx.fillText(ch, x, y);
+        x += ctx.measureText(ch).width;
+      }
+    },
+    setup: function setup() {
+      var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          nbChars = _ref.nbChars,
+          charPool = _ref.charPool,
+          _ref$charsColor = _ref.charsColor,
+          charsColor = _ref$charsColor === void 0 ? "" : _ref$charsColor,
+          _ref$cnvsWidth = _ref.cnvsWidth,
+          cnvsWidth = _ref$cnvsWidth === void 0 ? 130 : _ref$cnvsWidth,
+          _ref$cnvsHeight = _ref.cnvsHeight,
+          cnvsHeight = _ref$cnvsHeight === void 0 ? 30 : _ref$cnvsHeight,
+          _ref$textFont = _ref.textFont,
+          textFont = _ref$textFont === void 0 ? "18px Arial" : _ref$textFont,
+          _ref$textPosX = _ref.textPosX,
+          textPosX = _ref$textPosX === void 0 ? 30 : _ref$textPosX,
+          _ref$textPosY = _ref.textPosY,
+          textPosY = _ref$textPosY === void 0 ? 30 : _ref$textPosY;
+
+      var rndStr = this.getRndStr(nbChars, charPool);
+      var canvas = document.createElement('canvas'),
+          ctx = canvas.getContext('2d');
+      canvas.width = cnvsWidth;
+      canvas.height = cnvsHeight;
+      ctx.font = textFont;
+      this.charColor(ctx, rndStr, charsColor, textPosX, textPosY);
+      return {
+        canvas: canvas,
+        rndStr: rndStr
+      };
+    }
+  };
+});
 },{}],"app.js":[function(require,module,exports) {
-var setupCanvas = require('../src/captcha');
+var captcha = require('../index');
 
 window.onload = function () {
   var input = document.getElementById("input"),
@@ -209,17 +202,18 @@ window.onload = function () {
     textFont: "25px Arial"
   };
 
-  var _setupCanvas = setupCanvas(config),
-      canvas = _setupCanvas.canvas,
-      rndStr = _setupCanvas.rndStr;
+  var _captcha$setup = captcha.setup(config),
+      canvas = _captcha$setup.canvas,
+      rndStr = _captcha$setup.rndStr;
 
+  console.log(canvas, rndStr);
   divElement.appendChild(canvas);
 
   btn.onclick = function () {
     result.textContent = input.value === rndStr ? "good" : "bad";
   };
 };
-},{"../src/captcha":"../src/captcha.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../index":"../index.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -247,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51183" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51904" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

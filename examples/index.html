@@ -39,7 +39,7 @@
       <div class="col-md-8">
 
         <pre><code>
-var setupCanvas = require('@haikel/min-captcha');
+var captcha = require('@haikel/min-captcha');
 
 window.onload = () => {
 
@@ -50,17 +50,17 @@ window.onload = () => {
 
   const config = {
       nbChars: 3,
-      charsColor:"#000",
+      charsColor: "#000",
       charPool: "abcdef123456",
       textFont: "25px Arial"
   };
 
-  let { canvas, rndStr } = setupCanvas(config);
+  let { canvas, rndStr } = captcha.setup(config);
 
   divElement.appendChild(canvas);
 
   btn.onclick = () => {
-      result.textContent = input.value === rndStr ? "good" : "bad";        
+      result.textContent = input.value === rndStr ? "good" : "bad";
   }
 }
           </code></pre>
@@ -71,6 +71,7 @@ window.onload = () => {
 
   </div>
 
+  <script src="../index.js"></script>
   <script src="./app.js"></script>
 </body>
 
