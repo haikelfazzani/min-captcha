@@ -1,8 +1,9 @@
 # Easy & Simple Js Captcha
 [![](https://data.jsdelivr.com/v1/package/npm/@haikel/min-captcha/badge)](https://www.jsdelivr.com/package/npm/@haikel/min-captcha)
 ![captcha img](https://i.ibb.co/q7bwGJq/captc1.png)
-![build-succes](https://img.shields.io/badge/build-succes-brightgreen.svg)
 ![snyk-badge](https://snyk.io/test/github/haikelfazzani/min-captcha/badge.svg)
+![badgen](https://badgen.net/bundlephobia/min/@haikel/min-captcha)
+![badgen](https://badgen.net/bundlephobia/minzip/@haikel/min-captcha@1.3.2)
 
 ### [Demo](https://min-captcha.netlify.com)
 ```js

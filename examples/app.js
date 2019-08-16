@@ -1,5 +1,3 @@
-var captcha = require('../index');
-
 window.onload = () => {
 
     let input = document.getElementById("input"),
