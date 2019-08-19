@@ -4,7 +4,7 @@
 ![badgen](https://badgen.net/bundlephobia/min/@haikel/min-captcha)
 ![badgen](https://badgen.net/bundlephobia/minzip/@haikel/min-captcha@1.3.2)
 
-### [Demo](https://min-captcha.netlify.com)
+### [Demo](https://codepen.io/haikelfazzani-the-bold/pen/XWrKjLV)
 ```js
 $ npm i @haikel/min-captcha --save
 ```
