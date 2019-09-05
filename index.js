@@ -20,7 +20,7 @@
           for (; k < nbChars; k++) {
             text += charsPool.charAt(Math.random() * charsPool.length | 0);
           }
-          return text;
+          return text
         },
         rndColor: function rndColor() {
           var mf = Math.floor,
