@@ -51,7 +51,6 @@ function main (userObj) {
     }
 }
 
-
 export default (function (u = {}) {
     return main(u).setup()
 });
