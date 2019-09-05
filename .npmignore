@@ -1,6 +1,12 @@
 *.log
 npm-debug.log*
 
+# Config files
+.babelrc
+rollup.config.js
+.whitesource
+node-rm.js
+
 # Coverage directory used by tools like istanbul
 coverage
 .nyc_output
@@ -13,10 +19,15 @@ package-lock.json
 yarn.lock
 
 # project files
-dist/
 src/
 tests/
 examples/
+example/
+dist/
+lib/
+helpers/
+util/
+
 CHANGELOG.md
 .cache
 .travis.yml
@@ -25,3 +36,4 @@ CHANGELOG.md
 .eslintrc
 .babelrc
 .gitignore
+.vscode

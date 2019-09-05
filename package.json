@@ -1,13 +1,15 @@
 {
   "name": "@haikel/min-captcha",
-  "version": "1.3.3",
-  "description": "easy & simple js captcha",
+  "version": "1.4.0",
+  "description": "Easy and simple js captcha",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel examples/index.html",
-    "build": "parcel build src/captcha.js"
+    "clean": "rimraf -rf index.js",
+    "build": "npm run clean && rollup -c",
+    "rm-spaces": "node node-rm.js",
+    "test": "jest"
   },
-  "keywords": [    
+  "keywords": [
     "captcha",
     "canvas",
     "image",
@@ -25,7 +27,17 @@
   "homepage": "https://github.com/haikelfazzani/min-captcha.git#readme",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^23.6.0",
-    "parcel-bundler": "^1.10.3"
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^24.9.0",
+    "node-rm": "0.0.2",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.20.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-cleanup": "^3.1.1"
   }
 }

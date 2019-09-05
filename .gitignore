@@ -1,2 +1,13 @@
+*.log
+npm-debug.log*
+
+# Dependency directories
 node_modules/
-.cache/
+examples/
+
+# project files
+examples/
+example/
+dist/
+
+.cache

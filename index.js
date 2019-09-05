@@ -1,67 +1,59 @@
-(function (name, factory) {
-    if (typeof module != 'undefined') {
-        module.exports = factory();
-    }
-    else if (typeof define == 'function' && typeof define.amd == 'object') {
-        define(factory);
-    }
-    else {
-        this[name] = factory();
-    }
-}('captcha', function () {
-
-    return {
-
-        getRndStr(nbChars = 5, charPool = "ABCDEFGHIKLMNOPQRSTVXYZ123456789") {
-            
-            let text = "";
-            for (let i = 0; i < nbChars; i++) {
-                text += charPool.charAt((Math.random() * charPool.length) | 0);
-            }
-            return text;
-
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = global || self, global.captcha = factory());
+}(this, function () { 'use strict';
+    function main(userObj) {
+      var obj = userObj;
+      var nbChars = obj.nbChars || 5,
+          charsPool = obj.charsPool || 'ABCDEFGHIKLMNOPQRSTVXYZ123456789',
+          charsColor = obj.charsColor || "",
+          cnvsWidth = obj.cnvsWidth || 130,
+          cnvsHeight = obj.cnvsHeight || 30,
+          textFont = obj.textFont || '18px Arial',
+          textPosX = obj.textPosX || 30,
+          textPosY = obj.textPosY || 30;
+      return {
+        getRndStr: function getRndStr() {
+          var text = '',
+              k = 0;
+          for (; k < nbChars; k++) {
+            text += charsPool.charAt(Math.random() * charsPool.length | 0);
+          }
+          return text;
         },
-        rndColor(color) {
-            let r = Math.floor(Math.random() * 256),
-                g = Math.floor(Math.random() * 256),
-                b = Math.floor(Math.random() * 256);
-
-            return color || `rgb(${r},${g},${b})`;
-
+        rndColor: function rndColor() {
+          var mf = Math.floor,
+              r = mf(Math.random() * 256),
+              g = mf(Math.random() * 256),
+              b = mf(Math.random() * 256);
+          return charsColor || "rgb(".concat(r, ",").concat(g, ",").concat(b, ")");
         },
-        charColor(ctx, str, color, x, y) {
-
-            for (let i = 0; i < str.length; i++) {
-                let ch = str.charAt(i);
-                ctx.fillStyle = this.rndColor(color);
-                ctx.fillText(ch, x, y);
-                x += ctx.measureText(ch).width;
-            }
-
+        charColor: function charColor(ctx, rndStr) {
+          for (var i = 0, l = rndStr.length; i < l; i++) {
+            var ch = rndStr.charAt(i);
+            ctx.fillStyle = this.rndColor(charsColor);
+            ctx.fillText(ch, textPosX, textPosY);
+            textPosX += ctx.measureText(ch).width;
+          }
         },
-        setup({
-            nbChars,
-            charPool,
-            charsColor = "",
-            cnvsWidth = 130, cnvsHeight = 30,
-            textFont = "18px Arial",
-            textPosX = 30,
-            textPosY = 30
-        } = {}) {
-
-            let rndStr = this.getRndStr(nbChars, charPool);
-
-            const canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
-
-            canvas.width = cnvsWidth;
-            canvas.height = cnvsHeight;
-            ctx.font = textFont;
-
-            this.charColor(ctx, rndStr, charsColor, textPosX, textPosY);
-
-            return { canvas, rndStr };
+        setup: function setup() {
+          var rndStr = this.getRndStr(),
+              canvas = document.createElement('canvas'),
+              ctx = canvas.getContext('2d');
+          canvas.width = cnvsWidth;
+          canvas.height = cnvsHeight;
+          ctx.font = textFont;
+          this.charColor(ctx, rndStr);
+          return {
+            canvas: canvas,
+            rndStr: rndStr
+          };
         }
-
-    };
-
+      };
+    }
+    return (function () {
+      var u = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      return main(u).setup();
+    });
 }));
