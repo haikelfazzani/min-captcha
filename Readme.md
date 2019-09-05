@@ -23,7 +23,6 @@ Or include it via jsDelivr CDN:
 <script src="https://cdn.jsdelivr.net/npm/@haikel/min-captcha@1.4.0/index.min.js"></script>
 ```
 
-
 ## Examples
 **captcha([object]) : object**
 ```js
