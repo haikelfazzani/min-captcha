@@ -20,7 +20,7 @@ const captcha = require('@haikel/min-captcha');
 Or include it via jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@haikel/min-captcha@1.4.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@haikel/min-captcha@1.4.1/index.min.js"></script>
 ```
 
 ## Examples

@@ -1,6 +1,6 @@
 {
   "name": "@haikel/min-captcha",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Easy and simple js captcha",
   "main": "index.js",
   "scripts": {
